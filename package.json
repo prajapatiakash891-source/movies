@@ -1,0 +1,20 @@
+{
+  "name": "aakashmovies",
+  "version": "1.0.0",
+  "description": "Modern dark cinematic movie and web-series discovery platform built with MERN stack",
+  "main": "server/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "seed": "npm run seed --prefix server",
+    "build": "npm run build --prefix client"
+  },
+  "keywords": ["mern", "movies", "react", "express", "mongodb", "node", "vite", "tailwind"],
+  "author": "AakashMovies Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
