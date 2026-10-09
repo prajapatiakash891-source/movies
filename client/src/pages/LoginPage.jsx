@@ -28,7 +28,7 @@ export const LoginPage = () => {
 
   return (
     <>
-      <SEO title="Account Login" description="Log in to your AakashMovies account to access watchlist and personalized recommendations." />
+      <SEO title="Account Login" description="Log in to your Dekzo account to access watchlist and personalized recommendations." />
 
       <div className="min-h-[75vh] flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md bg-dark-secondary/90 border border-dark-border rounded-2xl p-8 shadow-2xl backdrop-blur-xl animate-fade-in">
@@ -39,7 +39,7 @@ export const LoginPage = () => {
                 <Film size={22} className="text-white" />
               </div>
               <span className="text-2xl font-black text-white">
-                AAKASH<span className="text-brand-red">MOVIES</span>
+                DEK<span className="text-brand-red">ZO</span>
               </span>
             </Link>
             <h2 className="text-xl font-bold text-white">Welcome Back</h2>
@@ -97,12 +97,6 @@ export const LoginPage = () => {
             </button>
           </form>
 
-          {/* Quick Demo Login Credentials Hint */}
-          <div className="mt-6 p-3 bg-dark-card/60 rounded-xl border border-dark-border text-[11px] text-muted space-y-1">
-            <p className="font-bold text-white">Demo Credentials:</p>
-            <p>User: <code className="text-brand-red">user@aakashmovies.com</code> / <code className="text-white">user123</code></p>
-            <p>Admin: <code className="text-brand-red">admin@aakashmovies.com</code> / <code className="text-white">admin123</code></p>
-          </div>
 
           <p className="text-center text-xs text-muted mt-6">
             Don't have an account?{' '}
