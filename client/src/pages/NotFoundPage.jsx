@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 export const NotFoundPage = () => {
   return (
     <>
-      <SEO title="404 Page Not Found" description="The page you requested on AakashMovies could not be found." />
+      <SEO title="404 Page Not Found" description="The page you requested on Dekzo could not be found." />
 
       <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-16">
         <div className="w-20 h-20 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center mb-6 border border-brand-red/20 shadow-glow">
