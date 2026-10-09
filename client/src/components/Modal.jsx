@@ -23,7 +23,7 @@ export const Modal = ({ isOpen, onClose, title, children, maxWidth = 'max-w-3xl'
       <div className={`relative w-full ${maxWidth} bg-dark-secondary rounded-2xl border border-dark-border shadow-2xl overflow-hidden flex flex-col max-h-[90vh]`}>
         {/* Modal Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-dark-border bg-dark-card/50">
-          <h2 className="text-lg font-bold text-white tracking-wide">{title || 'AakashMovies'}</h2>
+          <h2 className="text-lg font-bold text-white tracking-wide">{title || 'Dekzo'}</h2>
           <button
             onClick={onClose}
             aria-label="Close modal"
