@@ -14,7 +14,7 @@ export const Footer = () => {
                 <Film size={18} className="text-white" />
               </div>
               <span className="text-lg font-black tracking-wider text-white">
-                AAKASH<span className="text-brand-red">MOVIES</span>
+                DEK<span className="text-brand-red">ZO</span>
               </span>
             </Link>
             <p className="text-xs text-muted leading-relaxed">
@@ -25,7 +25,7 @@ export const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow AakashMovies on Twitter"
+                aria-label="Follow Dekzo on Twitter"
                 className="p-2 bg-dark-card hover:bg-brand-red hover:text-white rounded-full transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center"
               >
                 <Twitter size={16} />
@@ -34,7 +34,7 @@ export const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow AakashMovies on Facebook"
+                aria-label="Follow Dekzo on Facebook"
                 className="p-2 bg-dark-card hover:bg-brand-red hover:text-white rounded-full transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center"
               >
                 <Facebook size={16} />
@@ -43,7 +43,7 @@ export const Footer = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="View AakashMovies repository on GitHub"
+                aria-label="View Dekzo repository on GitHub"
                 className="p-2 bg-dark-card hover:bg-brand-red hover:text-white rounded-full transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center"
               >
                 <Github size={16} />
@@ -87,7 +87,7 @@ export const Footer = () => {
               Legal & Compliance
             </h2>
             <p className="text-xs text-muted mb-4 leading-relaxed">
-              AakashMovies provides licensed metadata, official trailer links, and legal availability indicators. We do not host copyrighted video files or facilitate unauthorized downloads.
+              Dekzo provides licensed metadata, official trailer links, and legal availability indicators. We do not host copyrighted video files or facilitate unauthorized downloads.
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-dark-card border border-dark-border text-xs text-neutral-300">
               <Shield size={14} className="text-brand-red" /> 100% Legal & Safe Platform
@@ -97,7 +97,7 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-muted gap-4">
-          <p>© {new Date().getFullYear()} AakashMovies. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Dekzo. All rights reserved.</p>
           <div className="flex items-center gap-1">
             <span>Crafted with</span>
             <Heart size={14} className="text-brand-red fill-brand-red" />
