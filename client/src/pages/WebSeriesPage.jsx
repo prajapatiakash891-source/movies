@@ -82,7 +82,7 @@ export const WebSeriesPage = () => {
     <>
       <SEO
         title="Web Series & Binge-Worthy TV Shows"
-        description="Stream the best web series, multi-season crime dramas, sci-fi shows, and comedies on AakashMovies."
+        description="Stream the best web series, multi-season crime dramas, sci-fi shows, and comedies on Dekzo."
       />
 
       <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 py-8">
