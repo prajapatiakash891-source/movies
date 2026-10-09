@@ -37,7 +37,7 @@ export const FavoritesPage = () => {
 
   return (
     <>
-      <SEO title="My Favorites Watchlist" description="View and manage your saved favorite movies and web series on AakashMovies." />
+      <SEO title="My Favorites Watchlist" description="View and manage your saved favorite movies and web series on Dekzo." />
 
       <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 py-8">
         <div className="mb-8 border-b border-white/5 pb-4">
