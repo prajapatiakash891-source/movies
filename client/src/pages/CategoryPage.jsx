@@ -40,7 +40,7 @@ export const CategoryPage = () => {
     <>
       <SEO
         title={`${data.categoryName || slug}`}
-        description={`Browse latest ${data.categoryName || slug} movies and web series on AakashMovies.`}
+        description={`Browse latest ${data.categoryName || slug} movies and web series on Dekzo.`}
       />
 
       <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 py-8">
