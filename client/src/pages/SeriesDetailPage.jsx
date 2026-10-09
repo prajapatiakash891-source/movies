@@ -77,7 +77,7 @@ export const SeriesDetailPage = () => {
     <>
       <SEO
         title={`${series.title} — Watch Seasons & Episodes`}
-        description={`Stream all seasons and episodes of ${series.title} on AakashMovies.`}
+        description={`Stream all seasons and episodes of ${series.title} on Dekzo.`}
         image={posterUrl}
       />
 
