@@ -18,7 +18,7 @@ export const AdminLayout = () => {
           </div>
           <h2 className="text-2xl font-bold text-white">Access Denied</h2>
           <p className="text-sm text-muted">
-            You must be logged in with administrator privileges to view the AakashMovies Admin Dashboard.
+            You must be logged in with administrator privileges to view the Dekzo Admin Dashboard.
           </p>
           <button
             onClick={() => navigate('/login')}
@@ -44,7 +44,7 @@ export const AdminLayout = () => {
       {/* Mobile Top Header */}
       <div className="md:hidden flex items-center justify-between p-4 bg-dark-secondary border-b border-dark-border">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-lg font-black text-brand-red">AAKASH</span>
+          <span className="text-lg font-black text-brand-red">DEKZO</span>
           <span className="text-lg font-black text-white">ADMIN</span>
         </Link>
         <button
@@ -64,10 +64,10 @@ export const AdminLayout = () => {
         <div className="space-y-6">
           <Link to="/" className="flex items-center gap-2.5 pb-4 border-b border-white/10">
             <div className="w-9 h-9 rounded-xl bg-brand-red flex items-center justify-center font-bold text-white shadow-glow">
-              A
+              D
             </div>
             <div>
-              <h1 className="text-base font-black tracking-wider text-white">AakashMovies</h1>
+              <h1 className="text-base font-black tracking-wider text-white">Dekzo</h1>
               <p className="text-[10px] text-brand-red font-bold uppercase tracking-widest">Control Panel</p>
             </div>
           </Link>
