@@ -38,7 +38,7 @@ export const HomePage = () => {
     <>
       <SEO
         title="Watch Latest Movies & Web Series Online"
-        description="AakashMovies is your dark cinematic destination to discover trending Bollywood, Hollywood, South Indian movies and Web Series in 4K Ultra HD."
+        description="Dekzo is your dark cinematic destination to discover trending Bollywood, Hollywood, South Indian movies and Web Series in 4K Ultra HD."
       />
 
       {/* Hero Banner Slider */}
