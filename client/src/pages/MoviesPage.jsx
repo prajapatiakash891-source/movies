@@ -88,8 +88,8 @@ export const MoviesPage = () => {
   return (
     <>
       <SEO
-        title={isSearchMode ? `Search: ${currentFilters.search} — AakashMovies` : "Explore All Movies & Web Series"}
-        description="Browse through thousands of latest movies and web series on AakashMovies."
+        title={isSearchMode ? `Search: ${currentFilters.search} — Dekzo` : "Explore All Movies & Web Series"}
+        description="Browse through thousands of latest movies and web series on Dekzo."
       />
 
       <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 py-8">
