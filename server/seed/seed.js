@@ -76,11 +76,11 @@ const seedDatabase = async () => {
       movieId: createdMovies[0]._id,
       onModel: 'Movie',
       rating: 10,
-      comment: 'Absolute masterpiece! The visuals and storytelling are top-notch on AakashMovies.',
+      comment: 'Absolute masterpiece! The visuals and storytelling are top-notch on Dekzo.',
     });
 
     console.log('----------------------------------------------------');
-    console.log(' AAKASHMOVIES DATABASE SEEDED SUCCESSFULLY! ');
+    console.log(' DEKZO DATABASE SEEDED SUCCESSFULLY! ');
     console.log('----------------------------------------------------');
     console.log(`Admin Account:  admin@aakashmovies.com / admin123`);
     console.log(`User Account:   user@aakashmovies.com / user123`);
