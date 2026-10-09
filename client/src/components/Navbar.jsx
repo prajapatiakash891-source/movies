@@ -59,7 +59,7 @@ export const Navbar = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-black tracking-wider text-white flex items-center gap-1">
-                AAKASH<span className="text-brand-red">MOVIES</span>
+                DEK<span className="text-brand-red">ZO</span>
               </span>
               <span className="text-[9px] text-muted font-bold uppercase tracking-widest -mt-1">
                 Cinematic Streaming
