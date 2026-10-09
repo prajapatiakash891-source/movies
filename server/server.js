@@ -76,6 +76,21 @@ if (fs.existsSync(clientBuildPath)) {
     if (req.path.startsWith('/api')) return next();
     res.sendFile(path.join(clientBuildPath, 'index.html'));
   });
+} else {
+  // Root welcome endpoint for Standalone API Backend deployment (Option 2)
+  app.get('/', (req, res) => {
+    res.json({
+      status: 'OK',
+      message: '🎬 Welcome to AakashMovies Backend API Server',
+      healthCheck: '/api/health',
+      endpoints: {
+        movies: '/api/movies',
+        series: '/api/series',
+        categories: '/api/categories',
+        auth: '/api/auth'
+      }
+    });
+  });
 }
 
 // Central Error Handler
