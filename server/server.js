@@ -3,6 +3,9 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
 
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
@@ -16,6 +19,9 @@ import errorHandler from './middleware/errorHandler.js';
 
 dotenv.config();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -24,8 +30,15 @@ app.use(helmet({
   contentSecurityPolicy: false, // Disabled for external embedded images/iframes (YouTube trailers, Unsplash posters)
 }));
 
+// Dynamic CORS configuration for local development & deployed frontends
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    if (!origin || !process.env.CLIENT_URL || process.env.CLIENT_URL === '*' || origin === process.env.CLIENT_URL || origin.includes('localhost') || origin.includes('127.0.0.1')) {
+      callback(null, true);
+    } else {
+      callback(null, true); // Permissive CORS for deployed API
+    }
+  },
   credentials: true,
 }));
 
@@ -54,6 +67,16 @@ app.use('/api/admin', adminRoutes);
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'AakashMovies API is running smoothly' });
 });
+
+// Serve static assets in production if client/dist exists (Fullstack deployment mode)
+const clientBuildPath = path.join(__dirname, '../client/dist');
+if (fs.existsSync(clientBuildPath)) {
+  app.use(express.static(clientBuildPath));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
+    res.sendFile(path.join(clientBuildPath, 'index.html'));
+  });
+}
 
 // Central Error Handler
 app.use(errorHandler);
