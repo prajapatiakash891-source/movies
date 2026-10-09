@@ -41,7 +41,7 @@ export const AdminDashboard = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
         <div>
           <h1 className="text-3xl font-black text-white">Platform Statistics Overview</h1>
-          <p className="text-xs text-muted mt-1">Manage content, users, and platform analytics for AakashMovies</p>
+          <p className="text-xs text-muted mt-1">Manage content, users, and platform analytics for Dekzo</p>
         </div>
 
         <div className="flex flex-wrap gap-2">
