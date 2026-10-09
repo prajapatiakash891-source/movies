@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import slugify from 'slugify';
 import connectDB from '../config/db.js';
 import User from '../models/User.js';
 import Movie from '../models/Movie.js';
@@ -24,7 +25,11 @@ const seedDatabase = async () => {
     ]);
 
     console.log('[Seed] Seeding genres...');
-    const createdGenres = await Genre.insertMany(initialGenres);
+    const genresWithSlug = initialGenres.map((g) => ({
+      ...g,
+      slug: slugify(g.name, { lower: true, strict: true }),
+    }));
+    const createdGenres = await Genre.insertMany(genresWithSlug);
     console.log(`[Seed] Successfully seeded ${createdGenres.length} genres.`);
 
     console.log('[Seed] Seeding admin and default user...');
@@ -45,7 +50,6 @@ const seedDatabase = async () => {
     });
 
     console.log('[Seed] Seeding movies...');
-    const slugify = (await import('slugify')).default;
     const moviesWithSlug = initialMovies.map((m) => ({
       ...m,
       slug: slugify(`${m.title}-${m.releaseYear}`, { lower: true, strict: true }),
