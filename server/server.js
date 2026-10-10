@@ -15,6 +15,7 @@ import categoryRoutes from './routes/categoryRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 import favoriteRoutes from './routes/favoriteRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
+import sitemapRoutes from './routes/sitemapRoutes.js';
 import errorHandler from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -54,6 +55,9 @@ app.use('/api', limiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Sitemap Route (accessible at /sitemap.xml)
+app.use('/', sitemapRoutes);
+
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/movies', movieRoutes);
@@ -73,7 +77,7 @@ const clientBuildPath = path.join(__dirname, '../client/dist');
 if (fs.existsSync(clientBuildPath)) {
   app.use(express.static(clientBuildPath));
   app.get('*', (req, res, next) => {
-    if (req.path.startsWith('/api')) return next();
+    if (req.path.startsWith('/api') || req.path === '/sitemap.xml') return next();
     res.sendFile(path.join(clientBuildPath, 'index.html'));
   });
 } else {
