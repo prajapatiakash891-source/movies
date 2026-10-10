@@ -1,0 +1,20 @@
+# AakashMovies
+
+> AakashMovies is a dark cinematic web streaming directory for discovering trending Bollywood, Hollywood, South Indian movies, and Web Series in HD quality.
+
+## Features & Capabilities
+- Browse movies by Industry (Bollywood, Hollywood, Tollywood, South Hindi Dubbed, Anime, Punjabi).
+- Filter titles by Genre, Language, Release Year, Content Type (Movie / Web Series), and Sort Criteria.
+- Detailed Movie & Series pages with Cast, Filmmakers, Synopsis, User Ratings, and Official Availability links.
+- Interactive Search with instant auto-suggestions.
+- Favorites / Watchlist management for registered users.
+
+## Structure & Pages
+- Homepage: /
+- Latest Movies Catalog: /movies
+- Web Series Catalog: /web-series
+- Category & Industry Pages: /category/:slug
+- Movie Details: /movie/:slug
+- Series Details: /series/:slug
+- User Favorites: /favorites
+- User Profile: /profile
