@@ -2,9 +2,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, image, type = 'website', canonicalUrl }) => {
-  const siteTitle = 'Dekzo';
-  const fullTitle = title ? `${title} — ${siteTitle}` : 'Dekzo — Watch Latest Movies & Web Series';
-  const defaultDesc = 'Discover and stream high-quality Bollywood, Hollywood, South Indian movies and trending Web Series on Dekzo.';
+  const siteTitle = 'MoviesAura';
+  const fullTitle = title ? `${title} — ${siteTitle}` : 'MoviesAura — Watch Latest Movies & Web Series';
+  const defaultDesc = 'Discover and stream high-quality Bollywood, Hollywood, South Indian movies and trending Web Series on MoviesAura.';
   const metaDesc = description || defaultDesc;
 
   return (
