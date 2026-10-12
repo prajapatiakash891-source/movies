@@ -3,7 +3,7 @@ import Series from '../models/Series.js';
 import Genre from '../models/Genre.js';
 
 // Production canonical base URL
-const BASE_URL = 'https://dekzo.vercel.app';
+const BASE_URL = 'https://moviesaura.vercel.app';
 
 // Primary static public pages
 const STATIC_PAGES = [
