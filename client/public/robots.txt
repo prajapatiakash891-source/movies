@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://dekzo.vercel.app/sitemap.xml
+Sitemap: https://moviesaura.vercel.app/sitemap.xml
