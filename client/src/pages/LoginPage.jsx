@@ -28,7 +28,7 @@ export const LoginPage = () => {
 
   return (
     <>
-      <SEO title="Account Login" description="Log in to your Dekzo account to access watchlist and personalized recommendations." />
+      <SEO title="Account Login" description="Log in to your MoviesAura account to access watchlist and personalized recommendations." />
 
       <div className="min-h-[75vh] flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md bg-dark-secondary/90 border border-dark-border rounded-2xl p-8 shadow-2xl backdrop-blur-xl animate-fade-in">
@@ -39,7 +39,7 @@ export const LoginPage = () => {
                 <Film size={22} className="text-white" />
               </div>
               <span className="text-2xl font-black text-white">
-                DEK<span className="text-brand-red">ZO</span>
+                MOVIES<span className="text-brand-red">AURA</span>
               </span>
             </Link>
             <h2 className="text-xl font-bold text-white">Welcome Back</h2>
