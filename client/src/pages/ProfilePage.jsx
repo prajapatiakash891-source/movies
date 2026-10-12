@@ -34,7 +34,7 @@ export const ProfilePage = () => {
 
   return (
     <>
-      <SEO title="User Profile Settings" description="Manage your account profile, avatar, and security settings on Dekzo." />
+      <SEO title="User Profile Settings" description="Manage your account profile, avatar, and security settings on MoviesAura." />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
         <div className="glass-panel p-8 rounded-2xl border border-dark-border space-y-6 shadow-2xl">
