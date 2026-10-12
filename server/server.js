@@ -69,7 +69,7 @@ app.use('/api/admin', adminRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Dekzo API is running smoothly' });
+  res.json({ status: 'OK', message: 'MoviesAura API is running smoothly' });
 });
 
 // Serve static assets in production if client/dist exists (Fullstack deployment mode)
@@ -85,7 +85,7 @@ if (fs.existsSync(clientBuildPath)) {
   app.get('/', (req, res) => {
     res.json({
       status: 'OK',
-      message: '🎬 Welcome to Dekzo Backend API Server',
+      message: '🎬 Welcome to MoviesAura Backend API Server',
       healthCheck: '/api/health',
       endpoints: {
         movies: '/api/movies',
@@ -104,7 +104,7 @@ app.use(errorHandler);
 const startServer = async () => {
   await connectDB();
   app.listen(PORT, () => {
-    console.log(`[Dekzo Server] Running on http://localhost:${PORT}`);
+    console.log(`[MoviesAura Server] Running on http://localhost:${PORT}`);
   });
 };
 
