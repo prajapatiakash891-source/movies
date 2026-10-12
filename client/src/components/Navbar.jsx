@@ -58,8 +58,8 @@ export const Navbar = () => {
               <Film size={22} className="text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-black tracking-wider text-white flex items-center gap-1">
-                DEK<span className="text-brand-red">ZO</span>
+              <span className="text-xl font-black tracking-wider text-white flex items-center">
+                MOVIES<span className="text-brand-red">AURA</span>
               </span>
               <span className="text-[9px] text-muted font-bold uppercase tracking-widest -mt-1">
                 Cinematic Streaming
