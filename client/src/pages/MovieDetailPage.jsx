@@ -108,12 +108,74 @@ export const MovieDetailPage = () => {
   const backdropUrl = getOptimizedImageUrl(movie.backdrop || movie.poster, { width: 1600, quality: 75 });
   const posterUrl = getOptimizedImageUrl(movie.poster, { width: 400, quality: 75 });
 
+  const movieCanonicalUrl = `https://moviesaura.vercel.app/movie/${movie.slug || slug}`;
+  const movieSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Movie',
+    name: movie.title,
+    description:
+      movie.synopsis ||
+      movie.description ||
+      `Watch information, cast, genres, trailer and official availability for ${movie.title} on MoviesAura.`,
+    image: posterUrl || backdropUrl,
+    datePublished: movie.releaseYear ? `${movie.releaseYear}-01-01` : undefined,
+    genre: movie.genres || [],
+    aggregateRating: movie.rating
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: movie.rating,
+          bestRating: '10',
+          worstRating: '1',
+          ratingCount: 150,
+        }
+      : undefined,
+  };
+
+  const movieBreadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://moviesaura.vercel.app/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Movies',
+        item: 'https://moviesaura.vercel.app/movies',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: movie.title,
+        item: movieCanonicalUrl,
+      },
+    ],
+  };
+
   return (
     <>
       <SEO
-        title={`${movie.title} (${movie.releaseYear})`}
-        description={`Watch information, cast, genres, trailer and official availability for ${movie.title} on MoviesAura.`}
-        image={posterUrl}
+        title={`${movie.title} (${movie.releaseYear || ''})`}
+        description={
+          movie.synopsis
+            ? movie.synopsis.slice(0, 160)
+            : `Watch information, cast, genres, trailer and official availability for ${movie.title} on MoviesAura.`
+        }
+        image={posterUrl || backdropUrl}
+        type="video.movie"
+        canonicalUrl={movieCanonicalUrl}
+        keywords={[
+          movie.title,
+          `${movie.title} full movie`,
+          `${movie.title} watch online`,
+          ...(movie.genres || []),
+          'moviesaura',
+        ]}
+        schema={[movieBreadcrumbSchema, movieSchema]}
       />
 
       {/* Hero Backdrop Section */}
