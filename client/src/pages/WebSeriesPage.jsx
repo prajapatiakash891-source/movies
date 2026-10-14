@@ -78,11 +78,51 @@ export const WebSeriesPage = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const seriesBreadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://moviesaura.vercel.app/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Web Series',
+        item: 'https://moviesaura.vercel.app/web-series',
+      },
+    ],
+  };
+
+  const seriesCollectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Trending Web Series & TV Shows — MoviesAura',
+    description:
+      'Stream binge-worthy web series, crime dramas, sci-fi shows, and multi-season TV shows in HD on MoviesAura.',
+    url: 'https://moviesaura.vercel.app/web-series',
+  };
+
   return (
     <>
       <SEO
-        title="Web Series & Binge-Worthy TV Shows"
-        description="Stream the best web series, multi-season crime dramas, sci-fi shows, and comedies on MoviesAura."
+        title="Trending Web Series & Binge-Worthy TV Shows"
+        description="Stream top-rated Hindi and English web series, multi-season crime thrillers, sci-fi shows, anime, and dramas in HD on MoviesAura."
+        canonicalUrl="https://moviesaura.vercel.app/web-series"
+        keywords={[
+          'web series',
+          'hindi web series',
+          'english tv shows',
+          'binge watch series',
+          'crime thriller series',
+          'watch web series online',
+          'all seasons episodes',
+          'moviesaura',
+        ]}
+        schema={[seriesBreadcrumbSchema, seriesCollectionSchema]}
       />
 
       <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 py-8">
