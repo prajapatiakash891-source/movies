@@ -73,12 +73,74 @@ export const SeriesDetailPage = () => {
   const backdropUrl = getOptimizedImageUrl(series.backdrop || series.poster, { width: 1600, quality: 75 });
   const posterUrl = getOptimizedImageUrl(series.poster, { width: 400, quality: 75 });
 
+  const seriesCanonicalUrl = `https://moviesaura.vercel.app/series/${series.slug || slug}`;
+  const seriesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TVSeries',
+    name: series.title,
+    description:
+      series.synopsis ||
+      series.description ||
+      `Stream all seasons and episodes of ${series.title} on MoviesAura.`,
+    image: posterUrl || backdropUrl,
+    genre: series.genres || [],
+    numberOfSeasons: series.seasons ? series.seasons.length : undefined,
+    aggregateRating: series.rating
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: series.rating,
+          bestRating: '10',
+          worstRating: '1',
+          ratingCount: 120,
+        }
+      : undefined,
+  };
+
+  const seriesBreadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://moviesaura.vercel.app/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Web Series',
+        item: 'https://moviesaura.vercel.app/web-series',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: series.title,
+        item: seriesCanonicalUrl,
+      },
+    ],
+  };
+
   return (
     <>
       <SEO
         title={`${series.title} — Watch Seasons & Episodes`}
-        description={`Stream all seasons and episodes of ${series.title} on MoviesAura.`}
-        image={posterUrl}
+        description={
+          series.synopsis
+            ? series.synopsis.slice(0, 160)
+            : `Stream all seasons and episodes of ${series.title} on MoviesAura.`
+        }
+        image={posterUrl || backdropUrl}
+        type="video.tv_show"
+        canonicalUrl={seriesCanonicalUrl}
+        keywords={[
+          series.title,
+          `${series.title} web series`,
+          `${series.title} all episodes`,
+          ...(series.genres || []),
+          'moviesaura',
+        ]}
+        schema={[seriesBreadcrumbSchema, seriesSchema]}
       />
 
       {/* Hero Backdrop */}
