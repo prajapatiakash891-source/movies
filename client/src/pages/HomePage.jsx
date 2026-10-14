@@ -34,11 +34,54 @@ export const HomePage = () => {
 
   const featuredMovies = data.featured && data.featured.length > 0 ? data.featured : data.latestMovies;
 
+  const homeSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://moviesaura.vercel.app/#website',
+        url: 'https://moviesaura.vercel.app/',
+        name: 'MoviesAura',
+        description:
+          'Watch Latest Bollywood, Hollywood, South Indian Movies & Trending Web Series Online in HD',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: 'https://moviesaura.vercel.app/movies?search={search_term_string}',
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      {
+        '@type': 'Organization',
+        '@id': 'https://moviesaura.vercel.app/#organization',
+        name: 'MoviesAura',
+        url: 'https://moviesaura.vercel.app/',
+        logo: 'https://moviesaura.vercel.app/favicon.svg',
+      },
+    ],
+  };
+
   return (
     <>
       <SEO
-        title="Watch Latest Movies & Web Series Online"
-        description="MoviesAura is your dark cinematic destination to discover trending Bollywood, Hollywood, South Indian movies and Web Series in 4K Ultra HD."
+        title="Watch Latest Movies & Web Series Online in HD"
+        description="MoviesAura is your destination to stream latest Bollywood, Hollywood Dual Audio, South Indian Hindi Dubbed movies and trending Web Series in 4K Ultra HD."
+        canonicalUrl="https://moviesaura.vercel.app/"
+        keywords={[
+          'movies',
+          'watch movies online',
+          'web series',
+          'bollywood movies',
+          'hollywood dual audio',
+          'south hindi dubbed',
+          'tollywood movies',
+          'anime streaming',
+          'free movies hd',
+          'moviesaura',
+        ]}
+        schema={homeSchema}
       />
 
       {/* Hero Banner Slider */}
