@@ -21,6 +21,10 @@
       "dest": "server/server.js"
     },
     {
+      "src": "/sitemap.xsl",
+      "dest": "server/server.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "client/$1"
     }
