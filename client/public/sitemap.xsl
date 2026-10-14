@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="2.0"
+                xmlns:html="http://www.w3.org/TR/REC-html40"
+                xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+  <xsl:template match="/">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+      <head>
+        <title>MoviesAura XML Sitemap</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/css">
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #080808;
+            color: #e5e5e5;
+            padding: 2.5rem 1.5rem;
+            line-height: 1.6;
+          }
+          .container {
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+          header {
+            background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+            border: 1px solid #262626;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+          }
+          .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+          }
+          .brand-badge {
+            background-color: #e50914;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.25rem 0.6rem;
+            border-radius: 0.375rem;
+            display: inline-block;
+          }
+          h1 {
+            color: #ffffff;
+            font-size: 1.875rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+          }
+          p.subtitle {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+          }
+          .stats-bar {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid #262626;
+            flex-wrap: wrap;
+          }
+          .stat-item {
+            display: flex;
+            flex-direction: column;
+          }
+          .stat-label {
+            font-size: 0.75rem;
+            color: #737373;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+          }
+          .stat-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+          }
+          .table-wrapper {
+            background-color: #121212;
+            border: 1px solid #262626;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.875rem;
+          }
+          thead th {
+            background-color: #181818;
+            color: #a3a3a3;
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #262626;
+          }
+          tbody tr {
+            border-bottom: 1px solid #1e1e1e;
+            transition: background-color 0.15s ease;
+          }
+          tbody tr:hover {
+            background-color: #1a1a1a;
+          }
+          tbody tr:last-child {
+            border-bottom: none;
+          }
+          td {
+            padding: 1rem 1.25rem;
+            vertical-align: middle;
+          }
+          td.url a {
+            color: #fca5a5;
+            text-decoration: none;
+            font-weight: 500;
+            word-break: break-all;
+            transition: color 0.15s ease;
+          }
+          td.url a:hover {
+            color: #ef4444;
+            text-decoration: underline;
+          }
+          .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+          .badge-freq {
+            background-color: #262626;
+            color: #d4d4d4;
+          }
+          .badge-priority {
+            background-color: rgba(229, 9, 20, 0.15);
+            color: #f87171;
+            border: 1px solid rgba(229, 9, 20, 0.3);
+          }
+          .text-muted {
+            color: #737373;
+          }
+          footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #737373;
+            font-size: 0.8rem;
+          }
+          footer a {
+            color: #a3a3a3;
+            text-decoration: none;
+          }
+          footer a:hover {
+            color: #ffffff;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <header>
+            <div class="brand-row">
+              <span class="brand-badge">MoviesAura</span>
+              <span style="color: #737373; font-size: 0.875rem;">SEO Index</span>
+            </div>
+            <h1>XML Sitemap</h1>
+            <p class="subtitle">
+              This dynamic XML sitemap is indexed by Google, Bing, and other search engines to discover all canonical routes and categories on MoviesAura.
+            </p>
+            <div class="stats-bar">
+              <div class="stat-item">
+                <span class="stat-label">Total URLs</span>
+                <span class="stat-value"><xsl:value-of select="count(sitemap:urlset/sitemap:url)"/></span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Format</span>
+                <span class="stat-value">Sitemap 0.9 XML</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Status</span>
+                <span class="stat-value" style="color: #4ade80;">Active &amp; Validated</span>
+              </div>
+            </div>
+          </header>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 55%;">URL Location</th>
+                  <th style="width: 15%;">Change Frequency</th>
+                  <th style="width: 15%;">Priority</th>
+                  <th style="width: 15%;">Last Modified</th>
+                </tr>
+              </thead>
+              <tbody>
+                <xsl:for-each select="sitemap:urlset/sitemap:url">
+                  <tr>
+                    <td class="url">
+                      <xsl:variable name="itemURL">
+                        <xsl:value-of select="sitemap:loc"/>
+                      </xsl:variable>
+                      <a href="{$itemURL}">
+                        <xsl:value-of select="sitemap:loc"/>
+                      </a>
+                    </td>
+                    <td>
+                      <span class="badge badge-freq">
+                        <xsl:value-of select="sitemap:changefreq"/>
+                      </span>
+                    </td>
+                    <td>
+                      <span class="badge badge-priority">
+                        <xsl:value-of select="sitemap:priority"/>
+                      </span>
+                    </td>
+                    <td>
+                      <xsl:choose>
+                        <xsl:when test="sitemap:lastmod">
+                          <xsl:value-of select="sitemap:lastmod"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <span class="text-muted">Daily Auto</span>
+                        </xsl:otherwise>
+                      </xsl:choose>
+                    </td>
+                  </tr>
+                </xsl:for-each>
+              </tbody>
+            </table>
+          </div>
+
+          <footer>
+            <p>
+              Generated for <a href="https://moviesaura.vercel.app">MoviesAura</a> &#183; Dark Cinematic Streaming Directory
+            </p>
+          </footer>
+        </div>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>
