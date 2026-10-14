@@ -85,11 +85,51 @@ export const MoviesPage = () => {
     ? 'All Web Series Catalog'
     : 'All Movies & Series Catalog';
 
+  const moviesBreadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://moviesaura.vercel.app/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Movies Catalog',
+        item: 'https://moviesaura.vercel.app/movies',
+      },
+    ],
+  };
+
+  const moviesCollectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'All Movies & Series Catalog — MoviesAura',
+    description:
+      'Browse through thousands of latest Bollywood, Hollywood, South Indian movies and trending web series on MoviesAura.',
+    url: 'https://moviesaura.vercel.app/movies',
+  };
+
   return (
     <>
       <SEO
-        title={isSearchMode ? `Search: ${currentFilters.search} — MoviesAura` : "Explore All Movies & Web Series"}
-        description="Browse through thousands of latest movies and web series on MoviesAura."
+        title={isSearchMode ? `Search: ${currentFilters.search}` : 'Explore All Movies & Web Series Catalog'}
+        description="Browse and stream thousands of latest Bollywood, Hollywood Dual Audio, and South Indian movies. Filter by genre, year, industry, and ratings on MoviesAura."
+        canonicalUrl="https://moviesaura.vercel.app/movies"
+        keywords={[
+          'all movies',
+          'movies catalog',
+          'bollywood movies',
+          'hollywood dual audio',
+          'south indian movies',
+          'watch movies online hd',
+          'latest movies 2026',
+          'moviesaura',
+        ]}
+        schema={[moviesBreadcrumbSchema, moviesCollectionSchema]}
       />
 
       <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 py-8">
