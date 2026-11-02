@@ -1,6 +1,7 @@
 # MoviesAura
 
 > MoviesAura is a dark cinematic web streaming directory for discovering trending Bollywood, Hollywood, South Indian movies, and Web Series in HD quality.
+> Canonical Domain: https://moviesaura.site
 
 ## Features & Capabilities
 - Browse movies by Industry (Bollywood, Hollywood, Tollywood, South Hindi Dubbed, Anime, Punjabi).
