@@ -3,7 +3,9 @@ import Series from '../models/Series.js';
 import Genre from '../models/Genre.js';
 
 // Production canonical base URL
-const BASE_URL = 'https://moviesaura.vercel.app';
+const BASE_URL = (process.env.CLIENT_URL && !process.env.CLIENT_URL.includes('localhost') && !process.env.CLIENT_URL.includes('vercel.app'))
+  ? process.env.CLIENT_URL
+  : 'https://moviesaura.site';
 
 // Primary static public pages
 const STATIC_PAGES = [
@@ -87,8 +89,16 @@ export const getSitemap = async (req, res, next) => {
     try {
       const dbPromise = Promise.all([
         Genre.find().select('slug updatedAt createdAt').lean().maxTimeMS(3000),
-        Movie.find().select('slug updatedAt createdAt').lean().maxTimeMS(3000),
-        Series.find().select('slug updatedAt createdAt').lean().maxTimeMS(3000),
+        Movie.find({
+          slug: { $exists: true, $ne: '' },
+          ...(Movie.schema.path('isDeleted') ? { isDeleted: { $ne: true } } : {}),
+          ...(Movie.schema.path('status') ? { status: { $ne: 'draft' } } : {}),
+        }).select('slug updatedAt createdAt').lean().maxTimeMS(3000),
+        Series.find({
+          slug: { $exists: true, $ne: '' },
+          ...(Series.schema.path('isDeleted') ? { isDeleted: { $ne: true } } : {}),
+          ...(Series.schema.path('status') ? { status: { $ne: 'draft' } } : {}),
+        }).select('slug updatedAt createdAt').lean().maxTimeMS(3000),
       ]);
 
       const timeoutPromise = new Promise((_, reject) =>
@@ -99,27 +109,27 @@ export const getSitemap = async (req, res, next) => {
 
       if (genres && genres.length > 0) {
         genres.forEach((g) => {
-          if (g.slug) {
+          if (g && g.slug && typeof g.slug === 'string' && g.slug.trim()) {
             const lastmod = formatDate(g.updatedAt || g.createdAt);
-            addUrl(`/category/${g.slug}`, '0.7', 'weekly', lastmod);
+            addUrl(`/category/${g.slug.trim()}`, '0.7', 'weekly', lastmod);
           }
         });
       }
 
       if (movies && movies.length > 0) {
         movies.forEach((m) => {
-          if (m.slug) {
+          if (m && m.slug && typeof m.slug === 'string' && m.slug.trim()) {
             const lastmod = formatDate(m.updatedAt || m.createdAt);
-            addUrl(`/movie/${m.slug}`, '0.7', 'weekly', lastmod);
+            addUrl(`/movie/${m.slug.trim()}`, '0.7', 'weekly', lastmod);
           }
         });
       }
 
       if (series && series.length > 0) {
         series.forEach((s) => {
-          if (s.slug) {
+          if (s && s.slug && typeof s.slug === 'string' && s.slug.trim()) {
             const lastmod = formatDate(s.updatedAt || s.createdAt);
-            addUrl(`/series/${s.slug}`, '0.7', 'weekly', lastmod);
+            addUrl(`/series/${s.slug.trim()}`, '0.7', 'weekly', lastmod);
           }
         });
       }
@@ -307,7 +317,11 @@ export const getSitemapXsl = (req, res) => {
           </div>
 
           <footer>
+<<<<<<< HEAD
+            <p>Generated for <a href="https://moviesaura.site">MoviesAura</a> &#183; Dark Cinematic Streaming Directory</p>
+=======
             <p>Generated for <a href="https://moviesaura.vercel.app">MoviesAura</a> &#183; Dark Cinematic Streaming Directory</p>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
           </footer>
         </div>
       </body>
