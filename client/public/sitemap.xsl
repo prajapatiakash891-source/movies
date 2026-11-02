@@ -246,11 +246,7 @@
 
           <footer>
             <p>
-<<<<<<< HEAD
               Generated for <a href="https://moviesaura.site">MoviesAura</a> &#183; Dark Cinematic Streaming Directory
-=======
-              Generated for <a href="https://moviesaura.vercel.app">MoviesAura</a> &#183; Dark Cinematic Streaming Directory
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
             </p>
           </footer>
         </div>
