@@ -2,62 +2,112 @@
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+<<<<<<< HEAD
+    <loc>https://moviesaura.site/</loc>
+    <lastmod>2026-11-01</lastmod>
+=======
     <loc>https://moviesaura.vercel.app/</loc>
     <lastmod>2026-10-14</lastmod>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://moviesaura.site/movies</loc>
+    <lastmod>2026-11-01</lastmod>
+=======
     <loc>https://moviesaura.vercel.app/movies</loc>
     <lastmod>2026-10-14</lastmod>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://moviesaura.site/web-series</loc>
+    <lastmod>2026-11-01</lastmod>
+=======
     <loc>https://moviesaura.vercel.app/web-series</loc>
     <lastmod>2026-10-14</lastmod>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://moviesaura.site/category/bollywood</loc>
+    <lastmod>2026-11-01</lastmod>
+=======
     <loc>https://moviesaura.vercel.app/category/bollywood</loc>
     <lastmod>2026-10-14</lastmod>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://moviesaura.site/category/hollywood</loc>
+    <lastmod>2026-11-01</lastmod>
+=======
     <loc>https://moviesaura.vercel.app/category/hollywood</loc>
     <lastmod>2026-10-14</lastmod>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://moviesaura.site/category/tollywood</loc>
+    <lastmod>2026-11-01</lastmod>
+=======
     <loc>https://moviesaura.vercel.app/category/tollywood</loc>
     <lastmod>2026-10-14</lastmod>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://moviesaura.site/category/south-hindi-dubbed</loc>
+    <lastmod>2026-11-01</lastmod>
+=======
     <loc>https://moviesaura.vercel.app/category/south-hindi-dubbed</loc>
     <lastmod>2026-10-14</lastmod>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://moviesaura.site/category/anime</loc>
+    <lastmod>2026-11-01</lastmod>
+=======
     <loc>https://moviesaura.vercel.app/category/anime</loc>
     <lastmod>2026-10-14</lastmod>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://moviesaura.site/category/punjabi</loc>
+    <lastmod>2026-11-01</lastmod>
+=======
     <loc>https://moviesaura.vercel.app/category/punjabi</loc>
     <lastmod>2026-10-14</lastmod>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://moviesaura.site/category/south-indian</loc>
+    <lastmod>2026-11-01</lastmod>
+=======
     <loc>https://moviesaura.vercel.app/category/south-indian</loc>
     <lastmod>2026-10-14</lastmod>
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
