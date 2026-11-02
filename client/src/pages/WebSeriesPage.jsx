@@ -86,13 +86,21 @@ export const WebSeriesPage = () => {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
+<<<<<<< HEAD
+        item: 'https://moviesaura.site/',
+=======
         item: 'https://moviesaura.vercel.app/',
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Web Series',
+<<<<<<< HEAD
+        item: 'https://moviesaura.site/web-series',
+=======
         item: 'https://moviesaura.vercel.app/web-series',
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
     ],
   };
@@ -103,7 +111,11 @@ export const WebSeriesPage = () => {
     name: 'Trending Web Series & TV Shows — MoviesAura',
     description:
       'Stream binge-worthy web series, crime dramas, sci-fi shows, and multi-season TV shows in HD on MoviesAura.',
+<<<<<<< HEAD
+    url: 'https://moviesaura.site/web-series',
+=======
     url: 'https://moviesaura.vercel.app/web-series',
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
   };
 
   return (
@@ -111,7 +123,11 @@ export const WebSeriesPage = () => {
       <SEO
         title="Trending Web Series & Binge-Worthy TV Shows"
         description="Stream top-rated Hindi and English web series, multi-season crime thrillers, sci-fi shows, anime, and dramas in HD on MoviesAura."
+<<<<<<< HEAD
+        canonicalUrl="https://moviesaura.site/web-series"
+=======
         canonicalUrl="https://moviesaura.vercel.app/web-series"
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
         keywords={[
           'web series',
           'hindi web series',
