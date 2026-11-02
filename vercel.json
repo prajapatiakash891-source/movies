@@ -13,6 +13,32 @@
   ],
   "routes": [
     {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "moviesaura.vercel.app"
+        }
+      ],
+      "status": 301,
+      "headers": {
+        "Location": "https://moviesaura.site/$1"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.moviesaura.site"
+        }
+      ],
+      "status": 301,
+      "headers": {
+        "Location": "https://moviesaura.site/$1"
+      }
+    },
+    {
       "src": "/api/(.*)",
       "dest": "server/server.js"
     },
@@ -25,6 +51,13 @@
       "dest": "server/server.js"
     },
     {
+<<<<<<< HEAD
+      "src": "/robots.txt",
+      "dest": "client/robots.txt"
+    },
+    {
+=======
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       "src": "/(.*)",
       "dest": "client/$1"
     }
