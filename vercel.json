@@ -51,13 +51,10 @@
       "dest": "server/server.js"
     },
     {
-<<<<<<< HEAD
       "src": "/robots.txt",
       "dest": "client/robots.txt"
     },
     {
-=======
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       "src": "/(.*)",
       "dest": "client/$1"
     }
