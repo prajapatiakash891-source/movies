@@ -167,19 +167,31 @@ export const CategoryPage = () => {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
+<<<<<<< HEAD
+        item: 'https://moviesaura.site/',
+=======
         item: 'https://moviesaura.vercel.app/',
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Movies Catalog',
+<<<<<<< HEAD
+        item: 'https://moviesaura.site/movies',
+=======
         item: 'https://moviesaura.vercel.app/movies',
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: categoryConfig.heading,
+<<<<<<< HEAD
+        item: `https://moviesaura.site/category/${cleanSlug}`,
+=======
         item: `https://moviesaura.vercel.app/category/${cleanSlug}`,
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
     ],
   };
@@ -189,7 +201,11 @@ export const CategoryPage = () => {
     '@type': 'CollectionPage',
     name: categoryConfig.title,
     description: categoryConfig.description,
+<<<<<<< HEAD
+    url: `https://moviesaura.site/category/${cleanSlug}`,
+=======
     url: `https://moviesaura.vercel.app/category/${cleanSlug}`,
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
   };
 
   return (
@@ -198,7 +214,11 @@ export const CategoryPage = () => {
         title={categoryConfig.title}
         description={categoryConfig.description}
         keywords={categoryConfig.keywords}
+<<<<<<< HEAD
+        canonicalUrl={`https://moviesaura.site/category/${cleanSlug}`}
+=======
         canonicalUrl={`https://moviesaura.vercel.app/category/${cleanSlug}`}
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
         schema={[breadcrumbSchema, collectionSchema]}
       />
 
