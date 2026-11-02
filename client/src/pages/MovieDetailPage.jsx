@@ -108,11 +108,7 @@ export const MovieDetailPage = () => {
   const backdropUrl = getOptimizedImageUrl(movie.backdrop || movie.poster, { width: 1600, quality: 75 });
   const posterUrl = getOptimizedImageUrl(movie.poster, { width: 400, quality: 75 });
 
-<<<<<<< HEAD
   const movieCanonicalUrl = `https://moviesaura.site/movie/${movie.slug || slug}`;
-=======
-  const movieCanonicalUrl = `https://moviesaura.vercel.app/movie/${movie.slug || slug}`;
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
   const movieSchema = {
     '@context': 'https://schema.org',
     '@type': 'Movie',
@@ -143,21 +139,13 @@ export const MovieDetailPage = () => {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-<<<<<<< HEAD
         item: 'https://moviesaura.site/',
-=======
-        item: 'https://moviesaura.vercel.app/',
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Movies',
-<<<<<<< HEAD
         item: 'https://moviesaura.site/movies',
-=======
-        item: 'https://moviesaura.vercel.app/movies',
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
       {
         '@type': 'ListItem',
