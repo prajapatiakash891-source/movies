@@ -26,6 +26,16 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Domain Canonical Redirect Middleware (301 Permanent Redirect)
+// Redirects legacy Vercel domain and www subdomain to primary https://moviesaura.site preserving paths & query params
+app.use((req, res, next) => {
+  const host = (req.headers.host || '').toLowerCase();
+  if (host.startsWith('moviesaura.vercel.app') || host.startsWith('www.moviesaura.site')) {
+    return res.redirect(301, `https://moviesaura.site${req.originalUrl}`);
+  }
+  next();
+});
+
 // Security Middlewares
 app.use(helmet({
   contentSecurityPolicy: false, // Disabled for external embedded images/iframes (YouTube trailers, Unsplash posters)
@@ -55,8 +65,14 @@ app.use('/api', limiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Sitemap Route (accessible at /sitemap.xml)
+// Sitemap Routes (accessible at /sitemap.xml and /sitemap.xsl)
 app.use('/', sitemapRoutes);
+
+// Robots.txt Route
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain; charset=utf-8');
+  res.send('User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/\n\nSitemap: https://moviesaura.site/sitemap.xml\n');
+});
 
 // API Routes
 app.use('/api/auth', authRoutes);
