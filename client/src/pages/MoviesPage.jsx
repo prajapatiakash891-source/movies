@@ -93,21 +93,13 @@ export const MoviesPage = () => {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-<<<<<<< HEAD
         item: 'https://moviesaura.site/',
-=======
-        item: 'https://moviesaura.vercel.app/',
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Movies Catalog',
-<<<<<<< HEAD
         item: 'https://moviesaura.site/movies',
-=======
-        item: 'https://moviesaura.vercel.app/movies',
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
     ],
   };
@@ -118,11 +110,7 @@ export const MoviesPage = () => {
     name: 'All Movies & Series Catalog — MoviesAura',
     description:
       'Browse through thousands of latest Bollywood, Hollywood, South Indian movies and trending web series on MoviesAura.',
-<<<<<<< HEAD
     url: 'https://moviesaura.site/movies',
-=======
-    url: 'https://moviesaura.vercel.app/movies',
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
   };
 
   return (
@@ -130,11 +118,7 @@ export const MoviesPage = () => {
       <SEO
         title={isSearchMode ? `Search: ${currentFilters.search}` : 'Explore All Movies & Web Series Catalog'}
         description="Browse and stream thousands of latest Bollywood, Hollywood Dual Audio, and South Indian movies. Filter by genre, year, industry, and ratings on MoviesAura."
-<<<<<<< HEAD
         canonicalUrl="https://moviesaura.site/movies"
-=======
-        canonicalUrl="https://moviesaura.vercel.app/movies"
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
         keywords={[
           'all movies',
           'movies catalog',
