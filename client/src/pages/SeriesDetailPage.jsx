@@ -73,11 +73,7 @@ export const SeriesDetailPage = () => {
   const backdropUrl = getOptimizedImageUrl(series.backdrop || series.poster, { width: 1600, quality: 75 });
   const posterUrl = getOptimizedImageUrl(series.poster, { width: 400, quality: 75 });
 
-<<<<<<< HEAD
   const seriesCanonicalUrl = `https://moviesaura.site/series/${series.slug || slug}`;
-=======
-  const seriesCanonicalUrl = `https://moviesaura.vercel.app/series/${series.slug || slug}`;
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
   const seriesSchema = {
     '@context': 'https://schema.org',
     '@type': 'TVSeries',
@@ -108,21 +104,13 @@ export const SeriesDetailPage = () => {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-<<<<<<< HEAD
         item: 'https://moviesaura.site/',
-=======
-        item: 'https://moviesaura.vercel.app/',
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Web Series',
-<<<<<<< HEAD
         item: 'https://moviesaura.site/web-series',
-=======
-        item: 'https://moviesaura.vercel.app/web-series',
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
       {
         '@type': 'ListItem',
