@@ -317,11 +317,7 @@ export const getSitemapXsl = (req, res) => {
           </div>
 
           <footer>
-<<<<<<< HEAD
             <p>Generated for <a href="https://moviesaura.site">MoviesAura</a> &#183; Dark Cinematic Streaming Directory</p>
-=======
-            <p>Generated for <a href="https://moviesaura.vercel.app">MoviesAura</a> &#183; Dark Cinematic Streaming Directory</p>
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
           </footer>
         </div>
       </body>
