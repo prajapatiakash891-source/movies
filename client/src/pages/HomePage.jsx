@@ -39,13 +39,8 @@ export const HomePage = () => {
     '@graph': [
       {
         '@type': 'WebSite',
-<<<<<<< HEAD
         '@id': 'https://moviesaura.site/#website',
         url: 'https://moviesaura.site/',
-=======
-        '@id': 'https://moviesaura.vercel.app/#website',
-        url: 'https://moviesaura.vercel.app/',
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
         name: 'MoviesAura',
         description:
           'Watch Latest Bollywood, Hollywood, South Indian Movies & Trending Web Series Online in HD',
@@ -53,28 +48,17 @@ export const HomePage = () => {
           '@type': 'SearchAction',
           target: {
             '@type': 'EntryPoint',
-<<<<<<< HEAD
             urlTemplate: 'https://moviesaura.site/movies?search={search_term_string}',
-=======
-            urlTemplate: 'https://moviesaura.vercel.app/movies?search={search_term_string}',
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
           },
           'query-input': 'required name=search_term_string',
         },
       },
       {
         '@type': 'Organization',
-<<<<<<< HEAD
         '@id': 'https://moviesaura.site/#organization',
         name: 'MoviesAura',
         url: 'https://moviesaura.site/',
         logo: 'https://moviesaura.site/favicon.svg',
-=======
-        '@id': 'https://moviesaura.vercel.app/#organization',
-        name: 'MoviesAura',
-        url: 'https://moviesaura.vercel.app/',
-        logo: 'https://moviesaura.vercel.app/favicon.svg',
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
       },
     ],
   };
@@ -84,11 +68,7 @@ export const HomePage = () => {
       <SEO
         title="Watch Latest Movies & Web Series Online in HD"
         description="MoviesAura is your destination to stream latest Bollywood, Hollywood Dual Audio, South Indian Hindi Dubbed movies and trending Web Series in 4K Ultra HD."
-<<<<<<< HEAD
         canonicalUrl="https://moviesaura.site/"
-=======
-        canonicalUrl="https://moviesaura.vercel.app/"
->>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
         keywords={[
           'movies',
           'watch movies online',
