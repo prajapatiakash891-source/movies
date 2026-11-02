@@ -2,7 +2,13 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
+<<<<<<< HEAD
+const BASE_URL = (import.meta.env.VITE_SITE_URL && !import.meta.env.VITE_SITE_URL.includes('vercel.app'))
+  ? import.meta.env.VITE_SITE_URL
+  : 'https://moviesaura.site';
+=======
 const BASE_URL = 'https://moviesaura.vercel.app';
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
 const DEFAULT_SITE_TITLE = 'MoviesAura';
 const DEFAULT_DESCRIPTION =
   'Discover and stream high-quality Bollywood, Hollywood Dual Audio, South Indian Hindi Dubbed movies and trending Web Series in HD on MoviesAura.';
@@ -37,9 +43,16 @@ const SEO = ({
   // Resolve Canonical URL
   let resolvedCanonical = '';
   if (canonicalUrl) {
+<<<<<<< HEAD
+    const cleanUrl = String(canonicalUrl).replace(/https?:\/\/moviesaura\.vercel\.app/g, BASE_URL);
+    resolvedCanonical = cleanUrl.startsWith('http')
+      ? cleanUrl
+      : `${BASE_URL}${cleanUrl.startsWith('/') ? cleanUrl : `/${cleanUrl}`}`;
+=======
     resolvedCanonical = canonicalUrl.startsWith('http')
       ? canonicalUrl
       : `${BASE_URL}${canonicalUrl.startsWith('/') ? canonicalUrl : `/${canonicalUrl}`}`;
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
   } else if (location && location.pathname) {
     resolvedCanonical = `${BASE_URL}${location.pathname === '/' ? '' : location.pathname}`;
   } else {
@@ -49,9 +62,16 @@ const SEO = ({
   // Resolve OG Image URL
   let resolvedImage = DEFAULT_IMAGE;
   if (image) {
+<<<<<<< HEAD
+    const cleanImage = String(image).replace(/https?:\/\/moviesaura\.vercel\.app/g, BASE_URL);
+    resolvedImage = cleanImage.startsWith('http')
+      ? cleanImage
+      : `${BASE_URL}${cleanImage.startsWith('/') ? cleanImage : `/${cleanImage}`}`;
+=======
     resolvedImage = image.startsWith('http')
       ? image
       : `${BASE_URL}${image.startsWith('/') ? image : `/${image}`}`;
+>>>>>>> 899ce188272975a7a8903d266f2bfbcd8ba71b3e
   }
 
   // Format keywords
